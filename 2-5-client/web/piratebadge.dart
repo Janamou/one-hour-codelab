@@ -70,7 +70,7 @@ Future refreshList() async {
 
 void updateBadge(Event e) {
   String inputName = (e.target as InputElement).value;
-  var pirate = _shanghaier.shanghaiPirate(name: inputName);
+  var pirate = _shanghaier.shanghaiAPirate(name: inputName);
   setBadgeName(pirate);
   if (inputName.trim().isEmpty) {
     genButton
@@ -109,7 +109,7 @@ Future removeBadge(Event e) async {
 }
 
 void generateBadge(Event e) {
-  var pirate = _shanghaier.shanghaiPirate();
+  var pirate = _shanghaier.shanghaiAPirate();
   setBadgeName(pirate);
 }
 
