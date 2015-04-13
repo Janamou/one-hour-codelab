@@ -9,7 +9,7 @@ body {
   margin: 15px;
   color: #424242;
 }
-h1 {  
+h1 {
   font-weight: normal;
   font-size: 32px;
   margin-bottom: 30px;
@@ -17,19 +17,18 @@ h1 {
 button {
   font-family: inherit;
   font-size: 14px;
-  margin-top: 20px;
+  margin: 20px auto 0;
   box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
   border-radius: 2px;
   border: none;
-  padding: 8px;
-  text-transform: uppercase;  
+  padding: 6px 8px;
+  text-transform: uppercase;
   background: #e3e3e3;
   color: black;
   outline: none;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   display: block;
-  float: left;
 }
 button[disabled] {
   background-color: #d8d8d8 !important;
@@ -41,32 +40,49 @@ button:active {
 button:not(:disabled) {
   cursor: pointer;
 }
-input {
+input[type="text"] {
   outline: none;
+  font-family: inherit;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background: none;
+}
+select {
+  font-family: inherit;
+  border: none;
+  outline: none;
+  background: white;
+}
+select:focus option:checked, select option:hover {
+  background: linear-gradient(#d2d2d2, #d2d2d2);
+  color: white;
+}
+select option {
+  border-bottom: 1px solid #d2d2d2;
+  padding: 8px 6px;
+  outline: none;
+}
+select option:checked {
+  background: linear-gradient(#f0f0f0, #f0f0f0);
 }
 .widgets {
   padding-bottom: 20px;
-  float: left;
-}
-.widgets div {
-  overflow: hidden;
-}
-.widgets, .badge {
   margin-bottom: 20px;
   margin-right: 20px;
+  float: left;
 }
 .badge, .pirates {
   border-radius: 2px;
   font-size: 19px;
   width: 14em;
-  text-align: center; 
+  text-align: center;
   white-space: nowrap;
   overflow: hidden;
   box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
 }
 .badge {
   background: #f44336;
-  float: left;
   height: 7em;
 }
 .pirates {
@@ -87,20 +103,14 @@ input {
 }
 #pirateList {
   width: 100%;
-  border: none;
-  outline: none;
   height: 14em;
-  background: white;
 }
-#pirateList option {
-  border-bottom: 1px solid #ddd;
-  padding: 8px 6px;
-  outline: none;
+#generateButton {
+  margin-bottom: 100px;
 }
 #storeButton {
   background: #2196f3;
   color: white;
-  margin-left: 1em;
 }
 #storeButton:hover {
   background: #1e88e5;
@@ -111,21 +121,14 @@ input {
 #killButton {
   background: black;
   color: white;
-  margin-left: 80px;
 }
 #killButton:hover,
 #killButton:active {
   background: #212121;
 }
 #inputName {
-  font-size: 16px;
-  font-family: inherit;
   margin: 30px 0 0;
-  border: none;
-  border-bottom: 1px solid #ddd;
-  background: none;
-  outline: none;
-  width: 20em;
+  width: 14em;
   padding: 5px 0;
 }
 #inputName + span {
@@ -141,23 +144,34 @@ input {
   transition: all .2s ease-in;
 }
 #inputName:focus + span {
-  width: 100%;  
+  width: 100%;
   left: 0;
   visibility: visible;
 }
 @media all and (max-width: 600px) {
-  .badge, .widgets {
-    margin-right: 15px;
-    padding-bottom: 0;
-    margin-bottom: 50px;
+  #generateButton {
+    margin-bottom: 0;
   }
 }
-@media all and (max-width: 400px) {
-  .badge, .widgets, .pirates, button, #inputName {
+@media all and (max-width: 560px) {
+  h1 {
+    text-align: center;
+  }
+  .form {
+    width: 16em;
+    margin: 0 auto;
+  }
+  .widgets, .badge, .pirates, button, #inputName {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #inputName {
     width: 100%;
   }
-  button {
-    margin-left: 0 !important;
+  .widgets {
+    margin-bottom: 50px;
+    padding-bottom: 0;
   }
 }
 /* This is needed for proper ripple effect on buttons */
